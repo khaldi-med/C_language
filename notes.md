@@ -1,4 +1,6 @@
-* Q: Does it matter if I use single quotes or double quotes?
-	A: Yes. Single quotes are used for individual characters, but double quotes are always used for strings."
+### This is note from head-first-c book
 
-* 
+* "atoi()" This converts the text into a number.
+* You can use "break" into "while loop" and not in "for loop".
+* "continue" takes you back to the start of the loop.
+*
