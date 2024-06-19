@@ -14,8 +14,6 @@ int sumRange(int start, int end){
 }
 
 int main(int argc, char **argv){
-  int start
-int end
     if(argc != 3){
 	puts("The argements is not enogh try agin with 3 argements.");
     }
