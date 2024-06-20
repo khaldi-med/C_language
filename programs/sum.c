@@ -6,22 +6,26 @@ int sumRange(int start, int end){
     int sum;
 
     sum = 0;
+    i = start;
     while(i < end){
-	sum += 1;
-	++i;
+	sum = sum + i;
+	i++;
     }
     return sum;
 }
 
 int main(int argc, char **argv){
-  int start
-int end
-    if(argc != 3){
-	puts("The argements is not enogh try agin with 3 argements.");
-    }
-    start = atoi(argv[0]);
-    end = atoi(argv[1]);
-    pritnf("SumRange(%d, %d) = %d\n", start, end, sumRange(start, end));
+    int start;
+    int end;
+    if(argc != 3) {
+	fprintf(stderr, "Usage: %s\n start end", argv[0]);
+	return 1;
+    };
+    start = atoi(argv[1]);
+    end = atoi(argv[2]);
+
+    printf("sumRange(%d, %d) = %d\n", start, end, sumRange(start, end));
+
     return 0;
 }
 
