@@ -27,4 +27,28 @@
 If you have a runaway process that you can’t get rid of otherwise, you can use ps g to get a list of all your processes and their process ids. The kill command can then be used on the offending process, e.g. kill -KILL 6666 if your evil process has process id 6666. Sometimes the killall command can simplify this procedure, e.g. killall -KILL evil halts all process with command name evil.
 ```
 
-* For example, decimal 31 can be written as 037 in octal and 0x1f or 0X1F in hex. 
+* For example, decimal 31 can be written as 037 in octal and 0x1f or 0X1F in hex.
+
+* The % operator cannot be applied to float or double.  
+
+*  the expression ++n increments n before its value is used, while n++ increments n after its value has been used. This means that in a context where the value is being used, not just the effect, ++n and n++ are different.
+
+* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -28,3 +28,9 @@ If you have a runaway process that you can’t get rid of otherwise, you can use
 ```
 
 * For example, decimal 31 can be written as 037 in octal and 0x1f or 0X1F in hex. 
+### This is note from head-first-c book
+
+* "atoi()" This converts the text into a number.
+* You can use "break" into "while loop" and not in "for loop".
+* "continue" takes you back to the start of the loop.
+*
