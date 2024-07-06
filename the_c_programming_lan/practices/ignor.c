@@ -10,13 +10,15 @@ void sameChar(char s[], int c){
 			s[j++] = s[i];
 		}
 		i++;
-		s[j] = '\0';
+
 	}
+	s[j] = '\0';
 }
 int main(){
 	char s[] = "hellooo";
 	char c = 'o';
-	printf("%d", sameChar(s, c));
+	sameChar(s, c);
+	printf("%s", s);
 	return 0;
 }
-
+        
