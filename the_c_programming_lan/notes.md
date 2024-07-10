@@ -33,11 +33,19 @@ If you have a runaway process that you can’t get rid of otherwise, you can use
 
 *  the expression ++n increments n before its value is used, while n++ increments n after its value has been used. This means that in a context where the value is being used, not just the effect, ++n and n++ are different.
 
+
+* C provides six operators for bit manipulation; these may only
+  be applied to integral operands, that is, char, short, int,
+  and long, whether signed or unsigned.
+
+  &    bitwise AND
+  ¦    bitwise inclusive OR
+  ^    bitwise exclusive OR
+  <<   left shift
+  >>   right shift
+  ~    one’s complement (unary)
+
 * 
-
-
-
-
 
 
 

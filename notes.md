@@ -1,4 +1,5 @@
 * Here are some descriptions and examples of some of the built in types:
+
 	- void	Empty Type	
 	-	char	Single Character/Byte	char last_initial = 'H';
 	-	int	Integer	int age = 23;
@@ -28,3 +29,38 @@ If you have a runaway process that you can’t get rid of otherwise, you can use
 ```
 
 * For example, decimal 31 can be written as 037 in octal and 0x1f or 0X1F in hex. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
