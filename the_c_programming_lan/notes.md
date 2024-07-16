@@ -45,15 +45,16 @@ If you have a runaway process that you can’t get rid of otherwise, you can use
   >>   right shift
   ~    one’s complement (unary)
 
-* 
+
+
+* A program is just a set of definitions of variables and functions. Communication between the functions is by arguments and values returned by the functions, and through external variables. The functions can occur in any order in the source file, and the source program can be split into multiple files, so long as no function is split.
+
+* The return statement is the mechanism for returning a value from the called function to its caller.
 
 
 
-
-
-
-
-
+* A C program consists of a set of external objects, which are either variables or functions. The adjective “external” is used in contrast to “internal,” which describes the arguments and variables defined inside functions. External variables are defined outside of any function, and are thus potentially available to many functions. Functions themselves are always external, because C does not allow functions to be defined inside other functions.
+*
 
 
 
