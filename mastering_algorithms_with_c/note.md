@@ -8,4 +8,6 @@
 
 * A void pointer (void \*) is a type of pointer that can point to any data type. Since it doesn't have a specific type, it can be used to store addresses of any kind of data.
 
+* As with data structures, three reasons for using formal algorithms are **efficiency, abstraction, and reusability.**
+
 * 
