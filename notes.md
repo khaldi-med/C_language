@@ -1,3 +1,14 @@
+
+* "#" (hash) at the beginning of the first line. It means that the content of this line is a preprocessor directive.
+    * The prefix “pre” suggests that these operations are performed before the full processing (compilation) takes place. The changes the preprocessor introduces are controlled entirely by its directives. In the example program, we’re dealing with the include directive. When the preprocessor encounters that directive, it replaces the directive with the content of the file whose name is listed in the directive (like stdio.h). 
+
+* Every function in “C” begins with the following set of information:
+    - what is the result of the function? (int, char, void,..)
+    - what is the name of the function?
+    - how many parameters does the function have and what are their names?
+
+* IDE (Integrated Development Environment) is a software application that typically consists of a code editor, a compiler, a debugger, and a graphical user interface (GUI) builder.
+
 * Here are some descriptions and examples of some of the built in types:
 
 	- void	Empty Type	
