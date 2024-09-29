@@ -32,4 +32,12 @@
 
 * When we declare a pointer in C, a certain amount of space is allocated for it, just as for other types of variables. Pointers generally occupy one machine word, but their size can vary. Therefore, for portability, we should never assume that a pointer has a specific size. Pointers often vary in size as a result of compiler settings and type specifiers allowed by certain C implementations. It is also important to remember that when we declare a pointer, space is allocated only for the pointer itself; no space is allocated for the data the pointer references. Storage for the data is allocated in one of two ways: by declaring a variable for it or by allocating storage dynamically at runtime (using malloc or realloc, for example).
 
-* 
+* Memory leaks are blocks of storage that are allocated but never freed by a program, even when no longer in use. 
+
+* One of the most common uses of pointers in C is referencing aggregate data. Aggregate data is data composed of multiple elements grouped together because they are somehow related. C supports two classes of aggregate data: structures and arrays. (Unions, although similar to structures, are considered formally to be in a class by themselves.) 
+
+* a[i] == \*(a + i). when we add an integer i to a pointer, the result is the address, plus i times the number of bytes in the datatype the pointer references; it is not simply the address stored in the pointer plus i bytes. 
+
+* a[i][j] == \*(\*(a + i) + j). C treats a in this expression as a pointer that points to the element at row 0, column in a
+
+
