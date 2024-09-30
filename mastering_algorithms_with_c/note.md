@@ -38,6 +38,13 @@
 
 * a[i] == \*(a + i). when we add an integer i to a pointer, the result is the address, plus i times the number of bytes in the datatype the pointer references; it is not simply the address stored in the pointer plus i bytes. 
 
-* a[i][j] == \*(\*(a + i) + j). C treats a in this expression as a pointer that points to the element at row 0, column in a
+* a[i][j] == \*(\*(a + i) + j). C treats a in this expression as a pointer that points to the element at row 0, column in a.
 
+* In C, multi-dimensional arrays are stored in row-major order. This means that subscripts to the right vary more rapidly than those to the left.
+
+### Pointers as Parameters to Functions
+
+* Most importantly, they are used to support a type of parameter passing called **call-by-reference**. In call-by-reference parameter passing , when a function changes a parameter passed to it, the change persists after the function returns. Contrast this with **call-by-value parameter** passing, in which changes to parameters persist only within the function itself.
+
+* \*(\*(array + row) + col) 
 
