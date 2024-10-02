@@ -1,3 +1,15 @@
+*  In the language of logic, the connection of conditions is called a **conjunction**.
+
+* The logical conjunction operator in the “C” language is a digraph && (ampersand ampersand).
+
+```
+    &   (ampersand)	bitwise conjunction: requires exactly two “1s” to provide “1” as the result
+    |   (bar)	bitwise disjunction: requires at least one “1” to provide “1” as the result
+    ~   (tilde)	bitwise negation: requires only one “1” to provide “1” as the result
+    ^   (caret)	bitwise exclusive or: (is one argument and) requires “0” to provide “1” as the result
+```
+
+* 
 
 * "#" (hash) at the beginning of the first line. It means that the content of this line is a preprocessor directive.
     * The prefix “pre” suggests that these operations are performed before the full processing (compilation) takes place. The changes the preprocessor introduces are controlled entirely by its directives. In the example program, we’re dealing with the include directive. When the preprocessor encounters that directive, it replaces the directive with the content of the file whose name is listed in the directive (like stdio.h). 
