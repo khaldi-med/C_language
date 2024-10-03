@@ -9,7 +9,25 @@
     ^   (caret)	bitwise exclusive or: (is one argument and) requires “0” to provide “1” as the result
 ```
 
-* 
+* The shift operators in the “C” language are a pair of digraphs, << and >>:
+    * Value << Bits --> **>>= 1; division by 2**
+    * Value >> Bits --> **<<= 1;  multiplication by 2**
+
+
+#### Bit shifting
+
+* The “C” language offers yet another operation relating to single bits: shifting. This is applied only to integer values and you mustn't use floats as arguments for it. You use this operation very often quite unconsciously. How do we multiply any number by 10? Take a look:
+
+12345 × 10 = 123450
+
+As you can see, multiplying by ten is in fact a shift of all the digits to the left and filling the resulting gap with a “0”. Division by 10? Let's look:
+
+12340 ÷ 10 = 1234
+
+Dividing by 10 is nothing more than shifting the digits to the right.
+
+* **The same kind of operation is performed by the computer, but with one difference: as 2 is the base for binary numbers (not 10), shifting a value one bit to the left corresponds to multiplying it by 2; respectively, shifting one bit to the right is like dividing by 2 (notice that the right-most bit is lost).**
+
 
 * "#" (hash) at the beginning of the first line. It means that the content of this line is a preprocessor directive.
     * The prefix “pre” suggests that these operations are performed before the full processing (compilation) takes place. The changes the preprocessor introduces are controlled entirely by its directives. In the example program, we’re dealing with the include directive. When the preprocessor encounters that directive, it replaces the directive with the content of the file whose name is listed in the directive (like stdio.h). 
