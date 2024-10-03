@@ -48,3 +48,6 @@
 
 * \*(\*(array + row) + col) 
 
+### Generic pointer and casts
+
+* Normally C allows assignments only between pointers of the same type. For example, given a character pointer sptr (a string) and an integer pointer iptr, we are not permitted to assign sptr to iptr or iptr to sptr. However, **generic pointers can be set to pointers of any type, and vice versa. Thus, given a generic pointer gptr, we are permitted to assign sptr to gptr or gptr to sptr. To make a pointer generic in C, we declare it as a void pointer.** 
