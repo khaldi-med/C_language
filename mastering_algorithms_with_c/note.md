@@ -18,12 +18,14 @@
 
 * Consistency
 
-### Pointer Manipulation
+## Pointer Manipulation
 
-* **Generic pointers and casts:**
-    - Mechanisms that bypass and override C’s type system.**Generic pointers** let us point to data without being concerned with its type for the moment. **Casts** allow us to override the type of a variable temporarily.
+### Generic pointers and casts:
+- Mechanisms that bypass and override C’s type system.
+    * **Generic pointers** let us point to data without being concerned with its type for the moment. 
+    * **Casts** allow us to override the type of a variable temporarily.
 
-* **Function pointers:**
+### Function pointers:
     - Pointers that point to executable code, or blocks of information needed to invoke executable code, instead of pointing to data. They are used to store and manage functions as if they were pieces of data.
 
 * Recall that a pointer is simply a variable that stores the address where a piece of data resides in memory rather than storing the data itself. That is, pointers contain memory addresses. Even for experienced developers, at times this level of indirection can be a bit difficult to visualize, particularly when dealing with more complicated pointer constructs, such as pointers to other pointers. Thus, one of the best things we can do to understand and communicate information about pointers is to draw diagrams (see Figure 2.1). Rather than listing actual addresses in diagrams, pointers are usually drawn as arrows linking one location to another. When a pointer points to nothing at all—that is, when it is set to NULL—it is illustrated as a line terminated with a double bar (||).
