@@ -1,3 +1,5 @@
+* in C, a string is a continuous block of memory with a letter stored in each byte; pointers make it possible to perform efficient operations on strings.
+
 *  In the language of logic, the connection of conditions is called a **conjunction**.
 
 * The logical conjunction operator in the “C” language is a digraph && (ampersand ampersand).
@@ -71,7 +73,21 @@ If you have a runaway process that you can’t get rid of otherwise, you can use
 
 * For example, decimal 31 can be written as 037 in octal and 0x1f or 0X1F in hex.
 
+```
+int board[8][8];
+// an array of arrays of int
+int ** ptr;
+// a pointer to a pointer to int
+int * risks[10];
+// a 10-element array of pointers to int
+int (* rusks)[10]; // a pointer to an array of 10 ints
+int * oof[3][4];
+// a 3 x 4 array of pointers to int
+int (* uuf)[3][4]; // a pointer to a 3 x 4 array of ints
+int (* uof[3])[4]; // a 3-element array of pointers to
+4-element arrays of int
 
+```
 
 
 
