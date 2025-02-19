@@ -6,6 +6,8 @@ void	ft_strrev(char *s)
 	char	*end;
 	char	tmp;
 
+	if (!s || !*s)
+		return ;
 	start = s;
 	end = s;
 	while (*end)
