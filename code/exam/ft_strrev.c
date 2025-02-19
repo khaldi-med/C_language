@@ -17,6 +17,6 @@ void	ft_strrev(char *s)
 		*start = *end;
 		*end = tmp;
 		start++;
-		end++;
+		end--;
 	}
 }

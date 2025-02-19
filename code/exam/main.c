@@ -3,9 +3,10 @@
 
 int	main(int ac, char **av)
 {
-	if (ac == 3)
+	if (ac == 2)
 	{
-		printf("%d", ft_strcmp(av[1], av[2]));
+		ft_strrev(av[1]);
+		printf("%s", av[1]);
 	}
 	return (0);
 }
