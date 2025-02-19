@@ -11,7 +11,7 @@ void	ft_strrev(char *s)
 	while (*end)
 		end++;
 	end--;
-	while (*s)
+	while (start < end)
 	{
 		tmp = *start;
 		*start = *end;
