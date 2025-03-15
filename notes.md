@@ -9,7 +9,7 @@
 
 `
     &   (ampersand)	bitwise conjunction: requires exactly two “1s” to provide “1” as the result
-    |   (bar)	bitwise disjunction: requires at least one “1” to provide “1” as the result
+    |   (bar)	bitwise disjunction: requires at least one “1” to provide “1” as the resultn
     ~   (tilde)	bitwise negation: requires only one “1” to provide “1” as the result
     ^   (caret)	bitwise exclusive or: (is one argument and) requires “0” to provide “1” as the result
 `
@@ -69,7 +69,7 @@ Dividing by 10 is nothing more than shifting the digits to the right.
 * ctrl-Z:
 	Suspend the process. This will leave a stopped process lying around. Type jobs to list all your stopped processes, fg to restart the last process (or fg %1 to start process %1 etc.), bg to keep running the stopped process in the background, kill %1 to attempt to end process %1 politely, kill -KILL %1 to end process %1 even if it is intercepting normal kills.
 
-#### 
+## 
 
 `
 If you have a runaway process that you can’t get rid of otherwise, you can use ps g to get a list of all your processes and their process ids. The kill command can then be used on the offending process, e.g. kill -KILL 6666 if your evil process has process id 6666. Sometimes the killall command can simplify this procedure, e.g. killall -KILL evil halts all process with command name evil.
