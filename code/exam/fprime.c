@@ -33,9 +33,7 @@ void	fprime(unsigned int n)
 int	main(int ac, char **av)
 {
 	if (ac != 2)
-	{
-		printf("\n");
-		return (0);
-	}
-	fprime(atoi(av[1]));
+		fprime(atoi(av[1]));
+	printf("\n");
+	return (0);
 }
