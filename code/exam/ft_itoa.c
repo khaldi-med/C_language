@@ -5,31 +5,21 @@
 char	*ft_itoa(int n)
 {
 	char	*s;
-	int		i;
+	int		len;
 	long	tmp;
 
-	if (n == -2147483648)
-	{
-		return ("-2147483648");
-	}
-	i = 0;
+	len = n <= 0 ? 2 : 1;
 	tmp = n;
-	while (tmp)
-	{
+	while (tmp && ++len)
 		tmp /= 10;
-		i++;
-	}
-	if (!(s = malloc(sizeof(char *) * i + 1)))
+	if (!(s = malloc(sizeof(char *) * len)))
 		return (NULL);
-	if (n < 0)
-	{
-		s[0] = '-';
-		n *= -1;
-	}
-	s[i] = '\0';
+	s[--len] = '\0';
+	if (n <= 0)
+		s[0] = n < 0 ? '-' : '0';
 	while (n)
 	{
-		s[--i] = n % 10 + '0';
+		s[--len] = (n < 0 ? -n : n) % 10 + '0';
 		n /= 10;
 	}
 	return (s);
