@@ -20,7 +20,7 @@ void	expand_str(char *s)
 				write(1, "   ", 3);
 				i++;
 			}
-			else if (s[i + 1] != ' ' && s[i + 1] != '\t' && s[i])
+			else
 				write(1, "   ", 3);
 		}
 		i++;
