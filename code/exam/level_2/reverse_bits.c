@@ -1,24 +1,23 @@
 #include <stdio.h>
 
-unsigned char	reverse_bits(unsigned char c)
+unsigned char	reverse_bits_2(unsigned char octet)
 {
-	unsigned int	i;
-	char			bit;
+	int				i;
+	unsigned int	c;
 
 	i = 0;
-	bit = 0;
-	while (i <= 7)
+	c = 0;
+	while (i < 8)
 	{
-		if ((c >> i) & 1)
-			bit |= 1;
-		bit <<= 1;
+		c = c * 2 + (octet % 2);
+		octet /= 2;
 		i++;
 	}
-	return (bit);
+	return (c);
 }
 
 int	main(void)
 {
-	printf("%d\n", reverse_bits('A'));
+	printf("%d\n", reverse_bits_2('A'));
 	return (0);
 }
