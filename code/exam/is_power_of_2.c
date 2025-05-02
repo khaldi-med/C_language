@@ -1,4 +1,4 @@
-// #include <stdio.h>
+#include <stdio.h>
 
 int	is_power_of_2(unsigned int n)
 {
@@ -10,8 +10,8 @@ int	is_power_of_2(unsigned int n)
 	return (n == i);
 }
 
-// int	main(void)
-// {
-// 	printf("%d\n", is_power_of_2(9));
-// 	return (0);
-// }
+int	main(void)
+{
+	printf("%d\n", is_power_of_2(9));
+	return (0);
+}
