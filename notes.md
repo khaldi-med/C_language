@@ -91,4 +91,8 @@ If you have a runaway process that you can’t get rid of otherwise, you can use
 > int (* uof[3])[4]; "a 3-element array of pointers to 4-element arrays of int"
 `
 
+## 02/05/2025
+
+* Linking phase.Notice that our hello program calls the printf function, which is part of the standard C library provided by every C compiler. The printf function resides in a separate precompiled object file called printf.o, which must somehow be merged with our hello.o program.
+
 
