@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <unistd.h>
 
-long long	arr[100000];
-long long	sum_tmp[100000];
+
 
 int	main(void)
 {
+	long long	arr[100000];
+	long long	sum_tmp[100000] = {0};
 	long long	i;
 
 	int n, q, l, r;
@@ -18,17 +18,20 @@ int	main(void)
 		// 		printf("%lld", arr[i]);
 		i++;
 	}
+	
 	i = 1;
+	sum_tmp[0] = arr[0];
 	while (i <= n)
 	{
-		sum_tmp[i] += arr[i - 1];
-		printf("\n%lld\n", sum_tmp[i]);
+		sum_tmp[i] = sum_tmp[i - 1] + arr[i];
+		printf("%lld\n", sum_tmp[i]);
 		i++;
 	}
+	write(1, "\n", 1);
 	while (q)
 	{
 		scanf("%d %d", &l, &r);
-		printf("%lld\n", (sum_tmp[r]));
+		printf("%lld\n", (sum_tmp[r] - sum_tmp[l - 1]));
 		q--;
 	}
 	return (0);
