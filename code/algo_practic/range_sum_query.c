@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 long long	arr[100000];
@@ -23,6 +24,6 @@ int	main(void)
 		i++;
 		l++;
 	}
-	printf("%d\n", sum);
+	printf("%lld\n", sum);
 	return (0);
 }
