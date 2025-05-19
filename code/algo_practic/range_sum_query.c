@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <unistd.h>
 
-
-
 int	main(void)
 {
 	long long	arr[100000];
-	long long	sum_tmp[100000] = {0};
+	long long	sum_tmp[100000];
 	long long	i;
 
+	sum_tmp[100000] = {0};
 	int n, q, l, r;
 	scanf("%d %d", &n, &q);
 	i = 0;
@@ -18,7 +17,6 @@ int	main(void)
 		// 		printf("%lld", arr[i]);
 		i++;
 	}
-	
 	i = 1;
 	sum_tmp[0] = arr[0];
 	while (i <= n)
