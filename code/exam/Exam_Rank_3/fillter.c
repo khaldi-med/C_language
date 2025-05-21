@@ -7,29 +7,37 @@
 int	ft_error(char *s)
 {
 	perror(s);
-	return (1);
+	exit(1);
 }
 
 int	main(int argc, char **argv)
 {
-	char	*s;
+	char	s[1048];
 	char	*str;
+	int		read_bits;
 
+	read_bits = 0;
 	str = argv[1];
-	s = malloc(1048);
-	if (argc < 2)
-		ft_error("arg error");
+	if (argc != 2)
+		ft_error("arg error not");
 	while (1)
 	{
-		if (read(0, s, 1048) == -1)
+		read_bits = read(0, s, 1047);
+		if (read_bits == -1)
 			ft_error("read error");
+		if (read_bits < 1048)
+			s[read_bits] = '\0';
+		else
+			s[1047] = '\0';
+		if (read_bits > 0 && s[read_bits - 1] == '\n')
+			s[read_bits - 1] = '\0';
 		if (strcmp(str, s) == 0)
 		{
-			write(1, "indenticle\n", 11);
-			return (0);
+			write(1, "identical\n", 10);
+			exit(0);
 		}
 		else
-			printf("try agin ):");
+			printf("try agin ):\n");
 	}
 	return (0);
 }
