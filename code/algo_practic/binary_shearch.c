@@ -1,26 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-int	beanry_search(char *s, int target)
+int	search(int *nums, int numsSize, int target)
 {
 	int	max;
 	int	min;
-	int	i;
+	int	mid;
 
-	max = strlen(s);
+	max = numsSize;
 	min = 0;
-	i = max / 2;
-	while (s[i])
+	while (min <= max)
 	{
-		if (s[min] != target)
-			min += 1;
-		if (min > max)
-			return (-1);
-		if (target == s[i])
-			return (target);
+		mid = max - min / 2;
+		if (nums[mid] == target)
+			return (mid);
+		else if (nums[mid] < target)
+			min = mid + 1;
+		else
+			max = mid - 1;
 	}
+	return (0);
 }
 
-int	main(int ac, char **av)
+int	main(void)
 {
+	int	tar;
+	int	arr[6];
+	int	r;
+
+	arr[6] = {-1, 0, 3, 5, 9, 12};
+	tar = 12;
+	r = search(arr, 5, tar);
+	printf("%d\n", r);
+	return (0);
 }
