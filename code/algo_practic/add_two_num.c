@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <threads.h>
-#include <time.h>
 
 struct				ListNode
 {
@@ -27,6 +25,7 @@ struct ListNode	*addTwoNumbers(struct ListNode *l1, struct ListNode *l2)
 	int				tmp;
 	struct ListNode	*tmp_node;
 	int				sum;
+	struct ListNode	*result;
 
 	arr = malloc(sizeof(struct ListNode));
 	if (arr == NULL)
@@ -54,8 +53,8 @@ struct ListNode	*addTwoNumbers(struct ListNode *l1, struct ListNode *l2)
 		tmp_node->next->next = NULL;
 		tmp_node = tmp_node->next;
 	}
-	struct ListNode *result = arr->next;
-	free(arr); // Free the dummy head
+	result = arr->next;
+	free(arr);
 	return (result);
 }
 
@@ -66,19 +65,13 @@ int	main(void)
 	struct ListNode	*result;
 	struct ListNode	*curr;
 
-	// Properly initialize the first linked list: 2->4->3 (representing 342)
 	l1 = new_node(2);
 	l1->next = new_node(4);
 	l1->next->next = new_node(3);
-
-	// Properly initialize the second linked list: 5->6->4 (representing 465)
 	l2 = new_node(5);
 	l2->next = new_node(6);
 	l2->next->next = new_node(4);
-
 	result = addTwoNumbers(l1, l2);
-
-	// Print result
 	printf("Result: ");
 	curr = result;
 	while (curr != NULL)
@@ -89,30 +82,23 @@ int	main(void)
 		curr = curr->next;
 	}
 	printf("\n");
-
-	// Free memory for result linked list
 	while (result != NULL)
 	{
 		curr = result;
 		result = result->next;
 		free(curr);
 	}
-
-	// Free memory for l1
 	while (l1 != NULL)
 	{
 		curr = l1;
 		l1 = l1->next;
 		free(curr);
 	}
-
-	// Free memory for l2
 	while (l2 != NULL)
 	{
 		curr = l2;
 		l2 = l2->next;
 		free(curr);
 	}
-
 	return (0);
 }
