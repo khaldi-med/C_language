@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <threads.h>
 #include <time.h>
 
 struct				ListNode
@@ -8,55 +9,110 @@ struct				ListNode
 	struct ListNode	*next;
 };
 
-struct ListNode	*new_node(struct ListNode *new)
+struct ListNode	*new_node(int data)
 {
-	struct ListNode	*node;
+	struct ListNode	*new;
 
-	node = malloc(sizeof(new) * 8);
-	return (node);
+	new = malloc(sizeof(*new));
+	if (new == NULL)
+		return (NULL);
+	new->val = data;
+	new->next = NULL;
+	return (new);
 }
 
 struct ListNode	*addTwoNumbers(struct ListNode *l1, struct ListNode *l2)
 {
 	struct ListNode	*arr;
 	int				tmp;
+	struct ListNode	*tmp_node;
+	int				sum;
 
+	arr = malloc(sizeof(struct ListNode));
+	if (arr == NULL)
+		return (NULL);
+	arr->val = 0;
+	arr->next = NULL;
+	tmp_node = arr;
 	tmp = 0;
-	arr = malloc(sizeof(struct ListNode) * 100);
-	while (l1->next != NULL || l2->next != NULL)
+	while (l1 != NULL || l2 != NULL || tmp != 0)
 	{
-		arr->val = l1->val + l2->val;
-		if (arr->val > 9)
-		{
-			tmp = arr->val % 10;
-			arr->val = l1->next->val + l2->next->val + tmp;
-		}
-		l1 = l1->next;
-		l2 = l2->next;
-		arr = arr->next;
+		sum = tmp;
+		if (l1)
+			sum += l1->val;
+		if (l2)
+			sum += l2->val;
+		tmp = sum / 10;
+		tmp_node->next = malloc(sizeof(struct ListNode));
+		if (tmp_node->next == NULL)
+			return (NULL);
+		if (l1)
+			l1 = l1->next;
+		if (l2)
+			l2 = l2->next;
+		tmp_node->next->val = sum % 10;
+		tmp_node->next->next = NULL;
+		tmp_node = tmp_node->next;
 	}
-	return (arr);
+	struct ListNode *result = arr->next;
+	free(arr); // Free the dummy head
+	return (result);
 }
 
 int	main(void)
 {
-	new_node(l1);
-	new_node(l2);
-	new_node(result);
-	l1->val = 2;
-	l1->next->val = 4;
-	l1->next->next->val = 3;
-	l2->val = 2;
-	l2->next->val = 4;
-	l2->next->next->val = 3;
-	l2->val = 5;
-	l2->val = 6;
-	l2->val = 4;
+	struct ListNode	*l1;
+	struct ListNode	*l2;
+	struct ListNode	*result;
+	struct ListNode	*curr;
+
+	// Properly initialize the first linked list: 2->4->3 (representing 342)
+	l1 = new_node(2);
+	l1->next = new_node(4);
+	l1->next->next = new_node(3);
+
+	// Properly initialize the second linked list: 5->6->4 (representing 465)
+	l2 = new_node(5);
+	l2->next = new_node(6);
+	l2->next->next = new_node(4);
+
 	result = addTwoNumbers(l1, l2);
-	while (result->next != NULL)
+
+	// Print result
+	printf("Result: ");
+	curr = result;
+	while (curr != NULL)
 	{
-		printf("%d", result->val);
-		result = result->next;
+		printf("%d", curr->val);
+		if (curr->next != NULL)
+			printf(" -> ");
+		curr = curr->next;
 	}
+	printf("\n");
+
+	// Free memory for result linked list
+	while (result != NULL)
+	{
+		curr = result;
+		result = result->next;
+		free(curr);
+	}
+
+	// Free memory for l1
+	while (l1 != NULL)
+	{
+		curr = l1;
+		l1 = l1->next;
+		free(curr);
+	}
+
+	// Free memory for l2
+	while (l2 != NULL)
+	{
+		curr = l2;
+		l2 = l2->next;
+		free(curr);
+	}
+
 	return (0);
 }
