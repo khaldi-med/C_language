@@ -15,6 +15,7 @@ int	main(int argc, char **argv)
 	char	s[1048];
 	char	*str;
 	int		read_bits;
+	int		i;
 
 	read_bits = 0;
 	str = argv[1];
@@ -34,6 +35,14 @@ int	main(int argc, char **argv)
 		if (strcmp(str, s) == 0)
 		{
 			write(1, "identical\n", 10);
+			i = 0;
+			while (s[i])
+			{
+				s[i] = '*';
+				write(0, &s[i], 1);
+				i++;
+			}
+			write(1, "\n", 1);
 			exit(0);
 		}
 		else
