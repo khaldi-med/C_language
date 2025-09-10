@@ -80,7 +80,7 @@ int	main(int argc, char *argv[])
 		}
 	}
 	// Check for read error
-	if (bytes_read < 0)
+	if (total_read < 0)
 	{
 		free(buffer);
 		perror("Error: ");
