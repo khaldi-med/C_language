@@ -95,4 +95,15 @@ If you have a runaway process that you can’t get rid of otherwise, you can use
 
 * Linking phase.Notice that our hello program calls the printf function, which is part of the standard C library provided by every C compiler. The printf function resides in a separate precompiled object file called printf.o, which must somehow be merged with our hello.o program.
 
+`
+* The line
+> float (*pf) (float);
+    - declares a variable pf that is a pointer (*pf) to a function that receives a
+float as parameter and returns a float. The parentheses around *pf are
+needed to indicate that pf is a pointer.
+Without those parentheses, the instruction would become:
 
+> float * pf (float);
+    - which declares a function with name pf that receives a float as argument
+and has a pointer to a float as return value.
+`
