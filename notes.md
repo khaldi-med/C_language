@@ -107,3 +107,19 @@ Without those parentheses, the instruction would become:
     - which declares a function with name pf that receives a float as argument
 and has a pointer to a float as return value.
 `
+### Storage Class
+`
+There are two storage classes: automatic and static. Several keywords, together with the
+context of an object's declaration, specify its storage class. Automatic objects are local to a
+block (Par.9.3), and are discarded on exit from the block. Declarations within a block create
+automatic objects if no storage class specification is mentioned, or if the auto specifier is
+used. Objects declared register are automatic, and are (if possible) stored in fast registers of
+the machine.
+Static objects may be local to a block or external to all blocks, but in either case retain their
+values across exit from and reentry to functions and blocks. Within a block, including a block
+that provides the code for a function, static objects are declared with the keyword static.
+The objects declared outside all blocks, at the same level as function definitions, are always
+static. They may be made local to a particular translation unit by use of the static keyword;
+this gives them internal linkage. They become global to an entire program by omitting an
+explicit storage class, or by using the keyword extern; this gives them external linkage.
+`
