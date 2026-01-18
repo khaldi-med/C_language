@@ -53,3 +53,17 @@
 ### Generic pointer and casts
 
 * Normally C allows assignments only between pointers of the same type. For example, given a character pointer sptr (a string) and an integer pointer iptr, we are not permitted to assign sptr to iptr or iptr to sptr. However, **generic pointers can be set to pointers of any type, and vice versa. Thus, given a generic pointer gptr, we are permitted to assign sptr to gptr or gptr to sptr. To make a pointer generic in C, we declare it as a void pointer.** 
+
+### Recursion   
+* `When a function is called in a C program, a block of storage is allocated on the
+stack to keep track of information associated with the call. Each call is referred to
+as an activation. The block of storage placed on the stack is called an activation
+record or, alternatively, a stack frame. An activation record consists of five regions:
+incoming parameters, space for a return value, temporary storage used in evaluat-
+ing expressions, saved state information for when the activation terminates, and
+outgoing parameters (see Figure 3-2b). Incoming parameters are the parameters
+passed into the activation. Outgoing parameters are the parameters passed to func-
+tions called within the activation. The outgoing parameters of one activation
+record become the incoming parameters of the next one placed on the stack. The
+activation record for a function call remains on the stack until the call terminates.`
+
